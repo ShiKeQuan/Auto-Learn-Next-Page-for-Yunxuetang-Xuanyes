@@ -1,0 +1,113 @@
+# **📚 自动学习下一页助手 (Auto Learn Next Page)**
+
+[中文说明](https://www.google.com/search?q=%23-%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E) | [English Documentation](https://www.google.com/search?q=%23-english-documentation)
+
+## **🇨🇳 中文说明**
+
+这是一个用于 **云学堂 (Yunxuetang)** 和 **宣依 (Xuanyes)** 等企业培训平台的油猴 (Tampermonkey) 脚本。
+
+它能够自动检测课程倒计时，在学习完成后自动点击“下一页”，并包含防挂机弹窗处理、防连点等稳定机制，实现无人值守的自动挂机学习。
+
+### **✨ 主要功能**
+
+* **⏱️ 智能倒计时检测**：自动识别页面中的 还需 xx 秒 倒计时，归零后自动跳转。  
+* **🛡️ 防挂机验证**：自动检测并点击“继续学习”弹窗，防止长时间挂机导致学习暂停。  
+* **⏯️ 视频播放检测**：针对视频课程，具备超时放行机制（默认等待倒计时，若长时间未加载倒计时则判定为已完成），防止卡在无倒计时的视频页。  
+* **🚫 防重复点击**：内置 10 秒点击冷却时间（Cooldown），防止因网络延迟导致的双击跳课或页面卡死。  
+* **⚡ 纯文本页支持**：对于没有视频和倒计时的纯文本/PPT页面，自动识别并点击下一页。
+
+### **🚀 安装方法**
+
+#### **1\. 安装浏览器插件**
+
+首先，你需要为浏览器安装用户脚本管理器：
+
+* **Chrome / Edge**: [Tampermonkey (油猴)](https://www.tampermonkey.net/)  
+* **Firefox**: [Greasemonkey](https://addons.mozilla.org/zh-CN/firefox/addon/greasemonkey/)
+
+#### **2\. 安装脚本**
+
+1. 打开 Tampermonkey 管理面板，点击 **“添加新脚本”**。  
+2. 删除编辑区域内的所有默认代码。  
+3. 将本项目中的 main.js (或者你保存的脚本代码) 内容完整复制并粘贴进去。  
+4. 按 Ctrl \+ S 保存即可。
+
+### **⚙️ 支持平台**
+
+目前脚本默认匹配以下域名规则（可在脚本头部自行修改）：
+
+* \*://\*.xuanyes.com/\*  
+* \*://\*.yunxuetang.cn/\*
+
+如果你的企业培训平台使用的是独立域名但也是云学堂系统，请在脚本头部的 // @match 区域添加你的域名。
+
+### **🛠️ 版本历史**
+
+* **v1.5**: 新增防挂机弹窗检测（自动点击“继续学习”）。  
+* **v1.4**: 引入“超时放行”机制，修复已学完课程卡住不跳的问题。  
+* **v1.3**: 增加点击冷却锁（10秒），修复双击跳课 Bug。  
+* **v1.2**: 增加视频播放器检测，防止跳过未加载的视频。  
+* **v1.0**: 基础倒计时检测与自动跳转功能。
+
+### **⚠️ 免责声明 (Disclaimer)**
+
+1. **仅供学习交流**：本脚本仅用于技术研究和学习交流，**请勿用于任何商业用途**。  
+2. **合规使用**：请遵守所在企业或学校的培训规定。使用自动化脚本可能违反平台的服务条款，由此产生的任何后果（如账号被封禁、学习记录清零等）由使用者自行承担。  
+3. **无担保**：作者不对脚本的稳定性、安全性或特定场景下的有效性做任何保证。
+
+如果觉得好用，请给个 ⭐️ Star！
+
+## **🇺🇸 English Documentation**
+
+A Tampermonkey user script designed for enterprise training platforms like **Yunxuetang** and **Xuanyes**.
+
+It automatically detects the course countdown, clicks "Next Page" upon completion, handles anti-idle verification popups, and includes stability mechanisms like anti-double-click protection, enabling unattended automated learning.
+
+### **✨ Key Features**
+
+* **⏱️ Smart Countdown Detection**: Automatically identifies the "Remaining xx seconds" timer on the page and jumps to the next page when it reaches zero.  
+* **🛡️ Anti-Idle Verification**: Automatically detects and clicks the "Continue Learning" popup to prevent the session from pausing due to inactivity.  
+* **⏯️ Video Playback Detection**: For video courses, includes a timeout mechanism (waits for the countdown by default, but judges as completed if the countdown fails to load for a long time) to prevent getting stuck on video pages without timers.  
+* **🚫 Anti-Repeat Click**: Built-in 10-second click cooldown to prevent skipping classes or page freezes caused by network lag and double clicks.  
+* **⚡ Plain Text Page Support**: Automatically identifies and clicks the next page for plain text/PPT pages that do not have videos or countdowns.
+
+### **🚀 Installation**
+
+#### **1\. Install Browser Extension**
+
+First, install a user script manager for your browser:
+
+* **Chrome / Edge**: [Tampermonkey](https://www.tampermonkey.net/)  
+* **Firefox**: [Greasemonkey](https://addons.mozilla.org/zh-CN/firefox/addon/greasemonkey/)
+
+#### **2\. Install the Script**
+
+1. Open the Tampermonkey dashboard and click **"Add a new script"**.  
+2. Delete all default code in the editor.  
+3. Copy and paste the full content of main.js (or your saved script code) into the editor.  
+4. Press Ctrl \+ S to save.
+
+### **⚙️ Supported Platforms**
+
+The script matches the following domain rules by default (customizable in the script header):
+
+* \*://\*.xuanyes.com/\*  
+* \*://\*.yunxuetang.cn/\*
+
+If your enterprise training platform uses a custom domain but is based on the Yunxuetang system, please add your domain to the // @match section in the script header.
+
+### **🛠️ Version History**
+
+* **v1.5**: Added anti-idle popup detection (auto-clicks "Continue Learning").  
+* **v1.4**: Introduced "Timeout Release" mechanism to fix the issue where completed courses would get stuck.  
+* **v1.3**: Added click cooldown lock (10s) to fix double-click bugs.  
+* **v1.2**: Added video player detection to prevent skipping unloaded videos.  
+* **v1.0**: Basic countdown detection and auto-jump functionality.
+
+### **⚠️ Disclaimer**
+
+1. **For Educational Use Only**: This script is for technical research and educational exchange only. **Do not use it for any commercial purposes.**  
+2. **Compliance**: Please abide by the training regulations of your enterprise or school. Using automated scripts may violate the platform's terms of service. Users are solely responsible for any consequences (e.g., account suspension, clearing of learning records).  
+3. **No Warranty**: The author makes no guarantees regarding the stability, security, or effectiveness of the script in specific scenarios.
+
+If you find this script helpful, please give it a ⭐️ Star\!
